@@ -1,7 +1,7 @@
 package no.hvl.dat110.rpc;
 
 import java.nio.ByteBuffer;
-import java.util.Arrays;
+
 import no.hvl.dat110.TODO;
 
 public class RPCUtils {
@@ -13,9 +13,9 @@ public class RPCUtils {
 		// TODO - START
 		
 		// Encapsulate the rpcid and payload in a byte array according to the RPC message syntax / format
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		rpcmsg = new byte[payload.length + 1];
+		rpcmsg[0] = rpcid;
+		System.arraycopy(payload, 0, rpcmsg, 1, payload.length);
 		
 		// TODO - END
 		
@@ -30,8 +30,8 @@ public class RPCUtils {
 		
 		// Decapsulate the rpcid and payload in a byte array according to the RPC message syntax
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		payload = new byte[rpcmsg.length-1];
+		System.arraycopy(rpcmsg, 1, payload, 0, rpcmsg.length-1);
 		
 		// TODO - END
 		
@@ -46,8 +46,7 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		encoded = str.getBytes();
 		
 		// TODO - END
 		
@@ -60,9 +59,7 @@ public class RPCUtils {
 		String decoded = null; 
 		
 		// TODO - START 
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		decoded = new String(data);
 		
 		// TODO - END
 		
@@ -119,11 +116,10 @@ public class RPCUtils {
 	public static byte[] marshallInteger(int x) {
 		
 		byte[] encoded = null;
-		
+
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		encoded = ByteBuffer.allocate(4).putInt(x).array();
 		
 		// TODO - END
 		
@@ -137,8 +133,7 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		decoded = ByteBuffer.wrap(data).getInt();
 		
 		// TODO - END
 		

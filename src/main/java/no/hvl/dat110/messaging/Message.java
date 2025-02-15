@@ -1,4 +1,6 @@
-package no.hvl.dat110.messaging;
+	package no.hvl.dat110.messaging;
+
+import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
 
@@ -12,8 +14,11 @@ public class Message {
 		
 		// TODO - START
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.constructor("Message"));
+		if(data == null || data.length > 127) {
+			throw new IllegalArgumentException("Data must not be null and must not exceed 127 bytes.");
+		}
+		
+		this.data = data.clone();
 			
 		// TODO - END
 	}
