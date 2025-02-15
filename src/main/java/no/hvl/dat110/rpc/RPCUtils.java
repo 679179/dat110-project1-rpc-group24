@@ -72,8 +72,7 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		encoded = new byte[0];
 				
 		// TODO - END
 		
@@ -85,8 +84,6 @@ public class RPCUtils {
 		
 		// TODO
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
 		
 	}
 
